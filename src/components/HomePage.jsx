@@ -57,7 +57,7 @@ export const HomePage = () => {
       return;
     }
     try {
-      await axios.post("https://databases-auth.000webhost.com/index.php?route=/database/structure&db=id21031402_fotolog/api/comentarios", {
+      await axios.post("http://localhost:3000/api/comentarios", {
         idFoto: fotoActual,
         comentario,
         nombre,
@@ -72,7 +72,7 @@ export const HomePage = () => {
   const reciboComentarios = async () => {
     try {
       const res = await axios.get(
-        `https://databases-auth.000webhost.com/index.php?route=/database/structure&db=id21031402_fotolog/api/comentarios/${fotoActual}`
+        `http://localhost:3000/api/comentarios/${fotoActual}`
       );
       setComentarios(res.data);
     } catch (error) {
