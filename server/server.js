@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 // Configuración de la conexión a la base de datos
 const pool = new Pool({
   user: 'postgres',
-  host: 'localhost',
+  host: '10.1.4.49',
   database: 'fotolog',
   password: 'Ricardo.2019',
   port: 5432,

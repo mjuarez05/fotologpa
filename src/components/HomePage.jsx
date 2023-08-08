@@ -22,7 +22,7 @@ export const HomePage = () => {
   const cantidadFotos = 200;
   
   const obtenerRutaFoto = (numeroFoto) => {
-    const numeroFormateado = (numeroFoto + 12).toString().padStart(4, "0");
+    const numeroFormateado = (numeroFoto + 122).toString().padStart(4, "0");
     return `/src/assets/100SANPH/SANY${numeroFormateado}.JPG`;
   };
   
@@ -57,7 +57,7 @@ export const HomePage = () => {
       return;
     }
     try {
-      await axios.post("http://localhost:3000/api/comentarios", {
+      await axios.post("http://10.1.4.49:3000/api/comentarios", {
         idFoto: fotoActual,
         comentario,
         nombre,
@@ -72,7 +72,7 @@ export const HomePage = () => {
   const reciboComentarios = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/comentarios/${fotoActual}`
+        `http://10.1.4.49:3000/api/comentarios/${fotoActual}`
       );
       setComentarios(res.data);
     } catch (error) {
